@@ -40,7 +40,7 @@ export const Arrow: React.FC<ArrowProps> = ({
 
   return (
     <g className="arrow">
-      <path strokeWidth="1.5" d={path} fill="none" />
+      <path strokeWidth="2" stroke="#ED462E" d={path} fill="none" />
       <circle
         cx={taskFrom.x1 - arrowIndent / 2 - radius / 2}
         cy={taskFrom.y + taskHeight / 2}

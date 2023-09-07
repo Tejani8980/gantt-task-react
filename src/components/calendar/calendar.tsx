@@ -173,7 +173,7 @@ export const Calendar: React.FC<CalendarProps> = ({
             x={columnWidth * i + 0}
             className={styles.calendarBottomText}
           >
-            {0}
+            {1}
           </text>
           <text
             key={bottomValue + 10 + date.getMonth()}

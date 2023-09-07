@@ -81,7 +81,7 @@ export const GridBody: React.FC<GridBodyProps> = ({
   const now = new Date();
   let tickX = 0;
   const ticks: ReactChild[] = [];
-  let today: ReactChild = <rect />;
+  let today: ReactChild[] = [];
   for (let i = 0; i < dates.length; i++) {
     const date = dates[i];
     ticks.push(
@@ -108,13 +108,23 @@ export const GridBody: React.FC<GridBodyProps> = ({
           "millisecond"
         ).getTime() >= now.getTime())
     ) {
-      today = (
+      today.push(
         <rect
           x={tickX}
           y={0}
           width={columnWidth}
           height={y}
           fill={todayColor}
+        />
+      );
+    } else {
+      today.push(
+        <rect
+          x={tickX}
+          y={0}
+          width={columnWidth}
+          height={y}
+          fill={'#EBEFFF'}
         />
       );
     }
@@ -125,13 +135,23 @@ export const GridBody: React.FC<GridBodyProps> = ({
       date.getTime() >= now.getTime() &&
       dates[i + 1].getTime() < now.getTime()
     ) {
-      today = (
+      today.push(
         <rect
           x={tickX + columnWidth}
           y={0}
           width={columnWidth}
           height={y}
           fill={todayColor}
+        />
+      );
+    }else{
+      today.push(
+        <rect
+          x={tickX}
+          y={0}
+          width={columnWidth}
+          height={y}
+          fill={'#EBEFFF'}
         />
       );
     }
